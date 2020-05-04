@@ -2,17 +2,114 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="01959156-c86c-4ab3-baca-a8e91cfe04c0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/env.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/getHttpsConfig.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/jest/cssTransform.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/jest/fileTransform.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/modules.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/paths.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/pnpTs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/webpack.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/webpackDevServer.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/build.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/start.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/clock.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/cpu/RunIRQ.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/cpu/RunNMI.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/cpu/cpu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/cpu/cpuBus.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/cpu/cpuRam.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/cpu/cpuStep.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/cpu/setAddressingMode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/DisplayCpu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/DisplayCpuRam.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/displayPattern.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/term.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/helperFunctions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/instructions/ADC.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/instructions/AND.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/instructions/ASL.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/instructions/BCC.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/instructions/BCS.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/instructions/BEQ.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/instructions/BIT.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/instructions/BMI.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/instructions/BNE.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/instructions/BPL.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/instructions/BRK.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/instructions/BVC.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/instructions/BVS.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/instructions/CLC.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/instructions/CLD.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/instructions/CLI.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/instructions/CLV.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/instructions/CMP.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/instructions/CPX.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/instructions/CPY.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/instructions/DEC.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/instructions/DEX.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/instructions/DEY.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/instructions/EOR.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/instructions/INC.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/instructions/INX.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/instructions/INY.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/instructions/JMP.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/instructions/JSR.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/instructions/LDA.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/instructions/LDX.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/instructions/LDY.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/instructions/LSR.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/instructions/NOP.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/instructions/ORA.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/instructions/PHA.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/instructions/PHP.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/instructions/PLA.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/instructions/PLP.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/instructions/ROL.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/instructions/ROR.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/instructions/RTI.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/instructions/RTS.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/instructions/SBC.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/instructions/SEC.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/instructions/SED.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/instructions/SEI.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/instructions/STA.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/instructions/STX.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/instructions/STY.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/instructions/TAX.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/instructions/TAY.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/instructions/TSX.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/instructions/TXA.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/instructions/TXS.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/instructions/TYA.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/instructions/instructionsList.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/memoryMappers/mapper0.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/memoryMappers/romLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/memoryMappers/romParser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ppu/ppu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rom.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -27,12 +124,32 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/cpu" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\96nic\WebstormProjects\emu\node_modules\prettier" />
+    <property name="settings.editor.selected.configurable" value="watcher.settings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\96nic\WebstormProjects\emu\src\cpu" />
+      <recent name="C:\Users\96nic\WebstormProjects\emu\src\memoryMappers" />
+      <recent name="C:\Users\96nic\WebstormProjects\emu\src" />
+      <recent name="C:\Users\96nic\WebstormProjects\emu\src\instructions" />
+      <recent name="C:\Users\96nic\WebstormProjects\emu\src\gui" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\96nic\WebstormProjects\emu\src\cpu" />
+      <recent name="C:\Users\96nic\WebstormProjects\emu\src\instructions" />
+    </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
@@ -59,29 +176,82 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1588087759869</updated>
-      <workItem from="1588087761610" duration="1457000" />
+      <workItem from="1588087761610" duration="63510000" />
+      <workItem from="1588335256069" duration="103415000" />
     </task>
+    <task id="LOCAL-00001" summary="a">
+      <created>1588089937785</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1588089937785</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="a" />
+    <option name="LAST_COMMIT_MESSAGE" value="a" />
+  </component>
   <component name="WindowStateProjectService">
-    <state width="1899" height="148" key="GridCell.Tab.0.bottom" timestamp="1588088251242">
+    <state x="552" y="178" key="#ESLint" timestamp="1588280247063">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="148" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588088251242" />
-    <state width="1899" height="148" key="GridCell.Tab.0.center" timestamp="1588088251242">
+    <state x="552" y="178" key="#ESLint/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588280247063" />
+    <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1588089937414">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="148" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588088251242" />
-    <state width="1899" height="148" key="GridCell.Tab.0.left" timestamp="1588088251241">
+    <state x="585" y="114" key="CommitChangelistDialog2/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588089937414" />
+    <state x="704" y="103" key="Diagram.Print.Preview.Dialog" timestamp="1588522082736">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="148" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588088251241" />
-    <state width="1899" height="148" key="GridCell.Tab.0.right" timestamp="1588088251242">
+    <state x="704" y="103" key="Diagram.Print.Preview.Dialog/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588522082736" />
+    <state x="629" y="298" key="EditFileWatcherDialog" timestamp="1588180545851">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="148" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588088251242" />
+    <state x="629" y="298" key="EditFileWatcherDialog/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588180545851" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1588522077281">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588522077281" />
+    <state width="1899" height="296" key="GridCell.Tab.0.bottom" timestamp="1588541802735">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="296" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588541802735" />
+    <state width="1899" height="296" key="GridCell.Tab.0.center" timestamp="1588541802735">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="296" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588541802735" />
+    <state width="1899" height="296" key="GridCell.Tab.0.left" timestamp="1588541802735">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="296" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588541802735" />
+    <state width="1899" height="296" key="GridCell.Tab.0.right" timestamp="1588541802735">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="296" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588541802735" />
+    <state x="461" y="162" key="SettingsEditor" timestamp="1588180548954">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="162" key="SettingsEditor/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588180548954" />
+    <state x="-1813" y="0" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1588548824319">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1813" y="0" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588548824319" />
+    <state x="656" y="118" width="607" height="804" key="find.popup" timestamp="1588449578651">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="656" y="118" width="607" height="804" key="find.popup/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588449578651" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1588367538412">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588367538412" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1588517168048">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588517168048" />
   </component>
 </project>

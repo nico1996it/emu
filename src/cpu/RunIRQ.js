@@ -17,6 +17,7 @@ function RunIRQ() {
   cpu.StackPointer -= 1;
 
   //read the new program counter
+
   bus.adr = 0xfffe;
   var lsb = bus.value;
   bus.adr += 1;

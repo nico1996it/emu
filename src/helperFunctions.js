@@ -10,9 +10,9 @@ function isNegative(value) {
 function setZNFlags(value) {
   //check if is negative in signed 8bit range
 
-  if (value === 0) cpu.Zero = 1;
+  if (value == 0) cpu.Zero = 1;
   else cpu.Zero = 0;
-  if (isNegative(value)) cpu.Negative = 1;
+  if ((value & 0b10000000) > 0) cpu.Negative = 1;
   else cpu.Negative = 0;
 }
 export default setZNFlags;

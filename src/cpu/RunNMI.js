@@ -17,11 +17,13 @@ function RunNMI() {
   cpu.StackPointer -= 1;
 
   //read the new program counter
+
   bus.adr = 0xfffa;
   var lsb = bus.value;
   bus.adr += 1;
   var msb = bus.value;
   cpu.ProgramCounter = (msb << 8) + lsb;
   cpu.InterruptDisable = 1;
+  console.log("nmi");
 }
 export default RunNMI;

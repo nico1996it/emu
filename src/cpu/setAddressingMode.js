@@ -3,6 +3,7 @@ import cpu from "./cpu";
 function setAddressingMode(type) {
   //c'è da aggiungere i clock sulla cpu se page cross
   var warpHelper = new Uint8Array(1);
+  var warpHelper16 = new Uint16Array(1);
   cpu.AddressMode = type;
   switch (type) {
     case "Relative":
@@ -69,7 +70,8 @@ function setAddressingMode(type) {
       bus.adr = warpHelper[0];
 
       var lsb = bus.value;
-      bus.adr += 1;
+      warpHelper[0] = bus.adr + 1;
+      bus.adr = warpHelper[0];
       var msb = bus.value;
       bus.adr = (msb << 8) + lsb;
 
@@ -78,12 +80,15 @@ function setAddressingMode(type) {
       bus.adr += 1;
       bus.adr = bus.value;
       var lsb = bus.value;
-      bus.adr += 1;
+      warpHelper[0] = bus.adr + 1;
+      bus.adr = warpHelper[0];
       var msb = bus.value;
-      bus.adr = (msb << 8) + lsb + this.RegY;
+      warpHelper16[0] = (msb << 8) + lsb + this.RegY;
+      bus.adr = warpHelper16[0];
+
       break;
     default:
-    // code block
+      console.log("unknown addressMode", type);
   }
 }
 export default setAddressingMode;

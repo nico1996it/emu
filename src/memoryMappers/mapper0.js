@@ -10,8 +10,21 @@ class Mapper0 {
     for (var i = 0; i < sizePrgRom; i++) {
       rom.memory[i] = romParser.view[i + 0x10];
     }
+    if (romParser.PrgRomSize === 2) {
+      cpuBus.addressSpaces.push({
+        bound: [0x8000, 0xffff],
+        d: rom,
+        p: "memory",
+      });
+    } else {
+      cpuBus.addressSpaces.push({
+        bound: [0xc000, 0xffff],
+        d: rom,
+        p: "memory",
+      });
+    }
     var sizeChrRom = romParser.ChrRomSize * 8192; //Because is in 8kib blocks
-    for (var i = 0; i < sizeChrRom; i++) {
+    for (i = 0; i < sizeChrRom; i++) {
       ppu.memory[i] = romParser.view[i + sizePrgRom];
     }
   }

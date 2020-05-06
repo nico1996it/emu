@@ -1,9 +1,10 @@
 import { observable } from "mobx";
 import bus from "./cpuBus";
-import cpuStep from "./cpuStep";
+import step from "./step";
 import setAddressingMode from "./setAddressingMode";
 import RunIRQ from "./RunIRQ";
 import RunNMI from "./RunNMI";
+
 class cpu {
   registers = new Uint8Array(5);
   programCounter = new Uint16Array(1);
@@ -23,6 +24,7 @@ class cpu {
   InterruptDisable = 1;
   Zero = 0;
   Carry = 0;
+
   IRQ_PENDING = false;
   NMI_PENDING = false;
   IRQ() {
@@ -99,8 +101,9 @@ class cpu {
   }
 }
 
-cpu.prototype.step = cpuStep;
+cpu.prototype.step = step;
 cpu.prototype.setAddressingMode = setAddressingMode;
 cpu.prototype.RunIRQ = RunIRQ;
 cpu.prototype.RunNMI = RunNMI;
+
 export default new cpu();

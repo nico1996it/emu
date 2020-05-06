@@ -6,7 +6,7 @@ window.rom = rom;
 window.ppu = ppu;
 
 const ramBound = { bound: [0x00, 0x07ff], d: cpuRam, p: "memory" };
-const romBound = { bound: [0x8000, 0xffff], d: rom, p: "memory" };
+
 const PPUCTRL = { bound: [0x2000, 0x2000], d: ppu, p: "PPUCTRL" };
 const PPUMASK = { bound: [0x2001, 0x2001], d: ppu, p: "PPUMASK" };
 const PPUSTATUS = { bound: [0x2002, 0x2002], d: ppu, p: "PPUSTATUS" };
@@ -23,7 +23,7 @@ window.a = memory;
 class CpuBus {
   addressSpaces = [
     ramBound,
-    romBound,
+
     PPUCTRL,
     PPUMASK,
     PPUSTATUS,
@@ -65,7 +65,8 @@ class CpuBus {
     } else if (this.address === 0x2007) {
       ppu.PPUDATA = value;
     } else if (this.address === 0x2000) {
-      console.log(value);
+      console.log("ppucontrol", value.toString(2));
+      this.selectedDevice[this.address - this.offset] = value;
     } else {
       this.selectedDevice[this.address - this.offset] = value;
     }

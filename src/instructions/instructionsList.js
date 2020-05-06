@@ -76,14 +76,14 @@ instructions[0x96] = { i: STX, b: 2, c: 4, m: "ZeroPageY" };
 instructions[0x8e] = { i: STX, b: 3, c: 4, m: "Absolute" };
 
 instructions[0x84] = { i: STY, b: 2, c: 3, m: "ZeroPage" };
-instructions[0x94] = { i: STY, b: 2, c: 4, m: "ZeroPageY" };
+instructions[0x94] = { i: STY, b: 2, c: 4, m: "ZeroPageX" };
 instructions[0x8c] = { i: STY, b: 3, c: 4, m: "Absolute" };
 
 instructions[0xa0] = { i: LDY, b: 2, c: 2, m: "Immediate" };
 instructions[0xa4] = { i: LDY, b: 2, c: 3, m: "ZeroPage" };
-instructions[0xb4] = { i: LDY, b: 2, c: 4, m: "ZeroPageY" };
+instructions[0xb4] = { i: LDY, b: 2, c: 4, m: "ZeroPageX" };
 instructions[0xac] = { i: LDY, b: 3, c: 4, m: "Absolute" };
-instructions[0xbc] = { i: LDY, b: 3, c: 4, m: "AbsoluteY" };
+instructions[0xbc] = { i: LDY, b: 3, c: 4, m: "AbsoluteX" };
 
 instructions[0x85] = { i: STA, b: 2, c: 3, m: "ZeroPage" };
 instructions[0x95] = { i: STA, b: 2, c: 4, m: "ZeroPageX" };
@@ -236,6 +236,6 @@ instructions[0xe1] = { i: SBC, b: 2, c: 6, m: "IndexedIndirect" };
 instructions[0xf1] = { i: SBC, b: 2, c: 5, m: "IndirectIndexed" };
 
 instructions[0xea] = { i: NOP, b: 1, c: 2, m: "Implied" };
-instructions[0x00] = { i: BRK, b: 1, c: 7, m: "Implied" };
+instructions[0x00] = { i: BRK, b: 2, c: 7, m: "Implied" };
 instructions[0x40] = { i: RTI, b: 1, c: 6, m: "Implied" };
 export default instructions;

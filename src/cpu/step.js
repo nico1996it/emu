@@ -1,10 +1,9 @@
 import bus from "./cpuBus";
 
-import cpuRam from "./cpuRam";
 import clock from "../clock";
 import instructions from "../instructions/instructionsList";
 
-function cpuStep() {
+function step() {
   clock.reset();
   bus.adr = this.ProgramCounter;
   var value = bus.value;
@@ -23,10 +22,10 @@ function cpuStep() {
     console.debug("IRQ");
   } else {
     /*   console.debug(
-      this.ProgramCounter.toString(16),
-      instruction.i.name,
-      instruction.m
-    );*/
+          this.ProgramCounter.toString(16),
+          instruction.i.name,
+          instruction.m
+        );*/
 
     instruction.i();
     clock.increment(instruction.c);
@@ -36,4 +35,5 @@ function cpuStep() {
   //  this.refreshMemoryView();
   // cpuRam.refreshMemoryView();
 }
-export default cpuStep;
+
+export default step;

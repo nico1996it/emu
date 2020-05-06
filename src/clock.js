@@ -1,5 +1,6 @@
 //cose per demo
 import cpu from "./cpu/cpu";
+import ppu from "./ppu/ppu";
 var to_wait = 0;
 function sleep() {
   const date = performance.now();
@@ -17,9 +18,11 @@ class clock {
     to_wait = 0;
   }
   step() {
-    for (var i = 0; i < 500000; i++) {
+    for (var i = 0; i < 50000; i++) {
       cpu.step();
-      sleep();
+      ppu.step();
+      ppu.step();
+      ppu.step();
     }
   }
 }

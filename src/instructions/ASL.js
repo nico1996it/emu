@@ -8,10 +8,12 @@ function ASL() {
     cpu.Accumulator *= 2;
     setZNFlags(cpu.Accumulator);
   } else {
-    setZNFlags(cpu.Accumulator);
     cpu.Carry = bus.value & 0x80 ? 1 : 0;
+
     bus.value *= 2;
+
     cpu.Negative = bus.value & 0x80 ? 1 : 0;
+    cpu.Zero = bus.value == 0 ? 1 : 0;
   }
 }
 

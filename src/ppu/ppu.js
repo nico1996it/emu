@@ -1,16 +1,22 @@
 import displayPattern from "../gui/displayPattern";
+import drawingFunctions from "./drawingFunctions";
+import scanlineDispatcher from "./scanlineDispatcher";
 class ppu {
   memory = new Uint8Array(0x4000);
   vRamAdDress;
+  clockCycle = 0;
+  scanLineNr = 0;
+  pixelNr = 0;
+  bgRegister;
+  bgPaletteReg;
   PPUCTRL = new Uint8Array(1);
   PPUMASK = new Uint8Array(1);
   PPUSTATUS = new Uint8Array(1);
   OAMADDR = new Uint8Array(1);
   OAMDATA = new Uint8Array(1);
   PPUSCROLL = new Uint8Array(1);
-  //PPUADDR = new Uint8Array(1);
-  // PPUDATA = new Uint8Array(1);
   OAMDMA = new Uint8Array(1);
+
   constructor() {
     this.PPUSTATUS[0] = 0b10000000;
   }
@@ -24,52 +30,63 @@ class ppu {
       this.nWritePPUaddr = 0;
     }
   }
+
   set PPUDATA(value) {
     this.memory[this.vRamAdDress] = value;
-    this.vRamAdDress++;
+    this.vRamAdDress += this.VRAMIncrement; //da mettere 1/32 a seconda di ppuctrl
   }
 
-  printNametable() {
-    for (var n = 0; n < 30; n++) {
-      for (var i = 0; i < 32; i++) {
-        this.drawTile(i * 8, n * 8, this.memory[0x2000 + i + n * 32] + 1, 0);
-      }
+  get VRAMIncrement() {
+    return this.PPUCTRL & 0b100 ? 32 : 1;
+  }
+  get baseNameTable() {
+    var result = this.PPUCTRL & ~0b11111100;
+    switch (result) {
+      case 0:
+        return 0x2000;
+
+      case 1:
+        return 0x2400;
+
+      case 2:
+        return 0x2800;
+
+      case 3:
+        return 0x2c00;
+
+      default:
+        break;
+    }
+  }
+  get bgPatternTable() {
+    return this.PPUCTRL[0] & 0b10000 ? 1 : 0;
+  }
+  get enableNmi() {
+    return this.PPUCTRL[0] & 0b10000000 ? 1 : 0;
+  }
+  set vBankFlag(value) {
+    if (value === 1) this.PPUSTATUS[0] |= 0b10000000;
+    else if (value === 0) {
+      this.PPUSTATUS[0] &= ~0b10000000;
     }
   }
 
-  //TODO: da spostare
-  getRow(row, page, tile) {
-    var offset = tile * 16 + row;
-    var planeA = this.memory[offset];
-    var planeB = this.memory[offset + 0x8];
-    var result = [0, 0, 0, 0, 0, 0, 0];
-
-    for (var i = 7; i >= 0; i--) {
-      var v = (planeA & 0b1 ? 1 : 0) + ((planeB & 0b1 ? 1 : 0) << 1);
-
-      planeA = planeA >> 1;
-      planeB = planeB >> 1;
-
-      result[i] = v;
+  step() {
+    this.pixelNr++;
+    if (this.pixelNr % 341 === 0) {
+      //first cycle of the next scan line
+      this.pixelNr = 0; //reset pixel
+      this.scanLineNr++; //increase scan line
     }
-
-    return result;
-  }
-
-  drawRow(x, y, row) {
-    row.map((value, index) => displayPattern.drawPixel(x + index, y, value));
-  }
-  drawTile(x, y, number, page) {
-    for (var i = 0; i < 8; i++) {
-      this.drawRow(x, y + i, this.getRow(i, page, number));
+    if (this.scanLineNr === 262) {
+      //next frame
+      this.pixelNr = 0; //reset pixel
+      this.scanLineNr = 0; //reset scanline
     }
-  }
-  drawTileLine(y, page) {
-    for (var i = 0; i < 256 / 8; i++)
-      this.drawTile(i * 8, y * 8, y * 32 + i, page);
-  }
-  drawPage(page) {
-    for (var i = 0; i < 256 / 8; i++) this.drawTileLine(i, page);
+    scanlineDispatcher(this.scanLineNr, this.pixelNr);
   }
 }
+
+ppu.prototype.drawTile = drawingFunctions.drawTile;
+ppu.prototype.getRow = drawingFunctions.getRow;
 export default new ppu();

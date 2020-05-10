@@ -149,6 +149,8 @@
   },
   "devDependencies": {
     "babel-preset-mobx": "^2.0.0",
-    "chai": "^4.2.0"
+    "chai": "^4.2.0",
+    "closure-webpack-plugin": "^2.3.0",
+    "google-closure-compiler": "^20200504.0.0"
   }
 }

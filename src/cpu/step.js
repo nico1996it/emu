@@ -4,7 +4,6 @@ import clock from "../clock";
 import instructions from "../instructions/instructionsList";
 
 function step() {
-  clock.reset();
   bus.adr = this.ProgramCounter;
   var value = bus.value;
   var instruction = instructions[value];
@@ -21,19 +20,11 @@ function step() {
     this.IRQ_PENDING = false;
     console.debug("IRQ");
   } else {
-    /*   console.debug(
-          this.ProgramCounter.toString(16),
-          instruction.i.name,
-          instruction.m
-        );*/
-
     instruction.i();
     clock.increment(instruction.c);
+
     this.ProgramCounter += instruction.b;
   }
-
-  //  this.refreshMemoryView();
-  // cpuRam.refreshMemoryView();
 }
 
 export default step;

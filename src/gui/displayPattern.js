@@ -69,17 +69,41 @@ class displayPattern {
     [0x00, 0x00, 0x00],
   ];
 
-  ctx;
+  offCtx;
   init() {
+    this.offScreenCanvas = document.createElement("canvas");
+    this.offScreenCanvas.width = "256";
+    this.offScreenCanvas.height = "240";
     const canvas = document.getElementById("pixelCanvas");
-    this.ctx = canvas.getContext("2d");
+    canvas.width = 256;
+    canvas.height = 240;
+
+    this.screenCtx = canvas.getContext("2d");
+    this.offCtx = this.offScreenCanvas.getContext("2d");
+
+    this.screenCtx.fillStyle = rgb([255, 255, 255]);
+    this.screenCtx.fillRect(0, 0, 256, 240);
+    this.imageData = this.screenCtx.getImageData(0, 0, 256, 240);
+    this.data = this.imageData.data;
   }
+
   drawPixel(x, y, colorIndex) {
-    if (colorIndex !== undefined) {
-      this.ctx.fillStyle = rgb(this.colors[colorIndex]);
+    if (colorIndex !== undefined && this.colors[colorIndex] !== undefined) {
+      //this.offCtx.fillStyle = rgb(this.colors[colorIndex]);
+      var index = (y * 256 + x) * 4;
+      this.data[index] = this.colors[colorIndex][0];
+      this.data[index + 1] = this.colors[colorIndex][1];
+      this.data[index + 2] = this.colors[colorIndex][2];
     }
 
-    this.ctx.fillRect(x, y, 1, 1);
+    //this.offCtx.fillRect(x, y, 1, 1);
+    if (y === 239 && x === 256) {
+      this.renderFrame();
+    }
+  }
+  renderFrame() {
+    //this.screenCtx.drawImage(this.offScreenCanvas, 0, 0);
+    this.screenCtx.putImageData(this.imageData, 0, 0);
   }
 }
 

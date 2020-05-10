@@ -1,6 +1,7 @@
 import cpu from "../cpu/cpu";
 import bus from "../cpu/cpuBus";
 function BRK() {
+  console.log("break");
   if (cpu.InterruptDisable === 0) {
     //check if the flag allow the interrupt
     //write on the stack

@@ -13,19 +13,17 @@ class Mapper0 {
     if (romParser.PrgRomSize === 2) {
       cpuBus.addressSpaces.push({
         bound: [0x8000, 0xffff],
-        d: rom,
-        p: "memory",
+        d: rom.memory,
       });
     } else {
       cpuBus.addressSpaces.push({
         bound: [0xc000, 0xffff],
-        d: rom,
-        p: "memory",
+        d: rom.memory,
       });
     }
     var sizeChrRom = romParser.ChrRomSize * 8192; //Because is in 8kib blocks
     for (i = 0; i < sizeChrRom; i++) {
-      ppu.memory[i] = romParser.view[i + sizePrgRom];
+      ppu.memory[i] = romParser.view[i + 0x10 + sizePrgRom];
     }
   }
 }

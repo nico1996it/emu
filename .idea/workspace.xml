@@ -2,33 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="01959156-c86c-4ab3-baca-a8e91cfe04c0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/96nic.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/cpu/step.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ppu/drawingFunctions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ppu/postRender.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ppu/preRender.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ppu/scanlineDispatcher.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ppu/vBank.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ppu/visibleScanlines.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/controller.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ppu/colorMixer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ppu/spriteEvaluation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/clock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/clock.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cpu/RunIRQ.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cpu/RunIRQ.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cpu/RunNMI.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cpu/RunNMI.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cpu/cpu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cpu/cpu.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cpu/cpuBus.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cpu/cpuBus.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cpu/cpuStep.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cpu/setAddressingMode.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cpu/setAddressingMode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cpu/step.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cpu/step.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/displayPattern.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/displayPattern.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helperFunctions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/helperFunctions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/instructions/ADC.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/instructions/ADC.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/instructions/ASL.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/instructions/ASL.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/instructions/BRK.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/instructions/BRK.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/instructions/ORA.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/instructions/ORA.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/instructions/ROL.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/instructions/ROL.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/instructions/ROR.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/instructions/ROR.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/instructions/instructionsList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/instructions/instructionsList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/memoryMappers/mapper0.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/memoryMappers/mapper0.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memoryMappers/romParser.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/memoryMappers/romParser.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ppu/ppu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ppu/ppu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ppu/scanlineDispatcher.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ppu/scanlineDispatcher.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ppu/visibleScanlines.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ppu/visibleScanlines.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,20 +75,28 @@
       <recent name="C:\Users\96nic\WebstormProjects\emu\src\gui" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.npm start">
+  <component name="RunManager" selected="npm.start">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
-    <configuration name="npm start" type="js.build_tools.npm">
+    <configuration default="true" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="start" />
-      </scripts>
+      <command value="start" />
       <node-interpreter value="project" />
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="start" />
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="JavaScript Debug.Debug Application" />
+      <item itemvalue="npm.start" />
+    </list>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -111,7 +110,8 @@
       <updated>1588087759869</updated>
       <workItem from="1588087761610" duration="63510000" />
       <workItem from="1588335256069" duration="131993000" />
-      <workItem from="1588694682329" duration="29373000" />
+      <workItem from="1588694682329" duration="75612000" />
+      <workItem from="1588870344464" duration="32639000" />
     </task>
     <task id="LOCAL-00001" summary="a">
       <created>1588089937785</created>
@@ -127,7 +127,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588585697877</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="ppu with background but no scrolling">
+      <created>1588757931216</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1588757931216</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,21 +143,26 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="a" />
     <MESSAGE value="first commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
+    <MESSAGE value="ppu with background but no scrolling" />
+    <option name="LAST_COMMIT_MESSAGE" value="ppu with background but no scrolling" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="178" key="#ESLint" timestamp="1588280247063">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="178" key="#ESLint/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588280247063" />
-    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1588695311641">
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588870411872">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588695311641" />
-    <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1588585697163">
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588870411872" />
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1588759927861">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="114" key="CommitChangelistDialog2/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588585697163" />
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588759927861" />
+    <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1588757930614">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="585" y="114" key="CommitChangelistDialog2/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588757930614" />
     <state x="704" y="103" key="Diagram.Print.Preview.Dialog" timestamp="1588632204966">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -163,41 +175,41 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588522077281" />
-    <state width="1899" height="296" key="GridCell.Tab.0.bottom" timestamp="1588695311837">
+    <state width="1899" height="296" key="GridCell.Tab.0.bottom" timestamp="1588870973556">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="296" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588695311837" />
-    <state width="1899" height="296" key="GridCell.Tab.0.center" timestamp="1588695311836">
+    <state width="1899" height="296" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588870973556" />
+    <state width="1899" height="296" key="GridCell.Tab.0.center" timestamp="1588870973556">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="296" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588695311836" />
-    <state width="1899" height="296" key="GridCell.Tab.0.left" timestamp="1588695311836">
+    <state width="1899" height="296" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588870973556" />
+    <state width="1899" height="296" key="GridCell.Tab.0.left" timestamp="1588870973556">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="296" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588695311836" />
-    <state width="1899" height="296" key="GridCell.Tab.0.right" timestamp="1588695311837">
+    <state width="1899" height="296" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588870973556" />
+    <state width="1899" height="296" key="GridCell.Tab.0.right" timestamp="1588870973556">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="296" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588695311837" />
+    <state width="1899" height="296" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588870973556" />
     <state x="461" y="162" key="SettingsEditor" timestamp="1588180548954">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="162" key="SettingsEditor/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588180548954" />
-    <state x="-1813" y="0" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1588694434131">
+    <state x="-1813" y="0" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1588966054054">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="-1813" y="0" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588694434131" />
-    <state x="656" y="118" width="607" height="804" key="find.popup" timestamp="1588696122655">
+    <state x="-1813" y="0" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588966054054" />
+    <state x="656" y="118" width="607" height="804" key="find.popup" timestamp="1588787614528">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="656" y="118" width="607" height="804" key="find.popup/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588696122655" />
-    <state x="616" y="240" key="run.anything.popup" timestamp="1588367538412">
+    <state x="656" y="118" width="607" height="804" key="find.popup/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588787614528" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1588873309959">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="616" y="240" key="run.anything.popup/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588367538412" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1588517168048">
+    <state x="616" y="240" key="run.anything.popup/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588873309959" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1588870926323">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588517168048" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588870926323" />
   </component>
 </project>

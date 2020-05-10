@@ -7,6 +7,8 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Term from "./gui/term";
+import cpuRam from "./cpu/cpuRam";
+window.cpuRam = cpuRam;
 function App() {
   return (
     <div className="App">

@@ -7,6 +7,8 @@ class clock {
   cpuFreeze = 0;
   lastInstructionLen = 0;
   toWait = 0;
+  totaltime = 0;
+  iteration = 0;
   increment(value) {
     this.cycle += value;
     this.toWait += value * 559;
@@ -41,21 +43,24 @@ class clock {
 
     this.toWait = 0; //add "artificial" time to compensate the ns problem
 
-    window.setTimeout(this.step.bind(this), 1);
+    window.setTimeout(this.step.bind(this), 0);
   }
   step() {
     //1788 instruction at 559ns =1000000 = 1ms
+    var time = Date.now();
 
-    while (this.toWait < 10000000) {
+    while (this.toWait < 50000000) {
       this.sendCpuInst();
       this.ppuCycle();
     }
-
-    this.setNewInterval();
+    console.log("time", this.totaltime / this.iteration);
+    this.toWait = 0;
+    this.totaltime += Date.now() - time;
+    this.iteration++;
   }
 
   timeStep() {
-    window.setTimeout(this.step.bind(this), 1);
+    window.setInterval(this.step.bind(this), 0);
   }
 }
 

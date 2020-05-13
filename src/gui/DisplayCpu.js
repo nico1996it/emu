@@ -1,21 +1,19 @@
-import { observer } from "mobx-react";
-import { observable } from "mobx";
 import React from "react";
 import cpu from "../cpu/cpu";
 import bus from "../cpu/cpuBus";
 import clock from "../clock";
 import romLoader from "../memoryMappers/romLoader";
 import displayPattern from "./displayPattern";
-cpu.refreshMemoryView();
+//cpu.refreshMemoryView();
 window.clock = clock;
 window.can = displayPattern;
-@observer
+
 class DisplayCpu extends React.Component {
   render() {
     return (
       <div>
         <input type="file" onChange={romLoader} />
-        <p>
+        {/*     <p>
           {"A:"}
           {cpu.registersView[1].toString(16)}
           {" X:"}
@@ -26,7 +24,7 @@ class DisplayCpu extends React.Component {
           {cpu.registersView[0].toString(16)}
           {" PC:"}
           {cpu.PcView[0].toString(16)}
-        </p>
+        </p>*/}
         <p>
           {"N:"}
           {cpu.Negative}

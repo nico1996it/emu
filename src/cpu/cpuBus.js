@@ -63,6 +63,7 @@ class CpuBus {
         this.selectedDevice = device;
 
         this.offset = device.bound[0];
+        break;
       }
     }
   }

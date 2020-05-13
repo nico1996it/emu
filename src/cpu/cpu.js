@@ -1,4 +1,3 @@
-import { observable } from "mobx";
 import bus from "./cpuBus";
 import step from "./step";
 import setAddressingMode from "./setAddressingMode";
@@ -13,10 +12,8 @@ class cpu {
     this.programCounter[0] = 0x0600;
     this.registers[0] = 0xff; //set the stack pointer
   }
-  @observable registersView;
-  @observable PcView;
+
   AddressMode;
-  //flags
   Negative = 0;
   Overflow = 0;
   Break = 1;
@@ -33,10 +30,7 @@ class cpu {
   NMI() {
     this.NMI_PENDING = true;
   }
-  refreshMemoryView() {
-    this.registersView = Array.prototype.slice.call(this.registers);
-    this.PcView = Array.prototype.slice.call(this.programCounter);
-  }
+
   get StackPointer() {
     return this.registers[0];
   }

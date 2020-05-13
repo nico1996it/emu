@@ -7,22 +7,15 @@ import cpu from "../cpu/cpu";
 window.ram = ram;
 window.bus = bus;
 window.cpu = cpu;
-var status = observable({
-  selectedAddress: 0,
-});
-ram.refreshMemoryView();
-@observer
+
 class DisplayCpuRam extends React.Component {
-  ClickAddress(e) {
-    status.selectedAddress = parseInt(e.target.id).toString(16);
-  }
+  ClickAddress(e) {}
   render() {
     return (
       <div>
-        <p>{status.selectedAddress}</p>
         <div className={"contCpuRam"}>
           <table className={"cpuRam"}>
-            <tbody>
+            {/*  <tbody>
               {ram.memoryView.map((value, index) => {
                 if (index % 16 === 0) {
                   return (
@@ -79,7 +72,7 @@ class DisplayCpuRam extends React.Component {
                   );
                 }
               })}
-            </tbody>
+            </tbody>*/}
           </table>
         </div>
       </div>

@@ -1,5 +1,3 @@
-import { observable } from "mobx";
-
 const romToLoad =
   "a9 06 8d ff ff a9 10 8d fe ff a9 10 a9 11 a9 10 a9 11 a9 12 40 a9 13";
 

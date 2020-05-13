@@ -2,6 +2,7 @@ import rom from "../rom";
 import romParser from "./romParser";
 import ppu from "../ppu/ppu";
 import cpuBus from "../cpu/cpuBus";
+
 window.ppu = ppu;
 class Mapper0 {
   LoadFromRom() {

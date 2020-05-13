@@ -14,6 +14,9 @@ table.cpuRam th {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
   monospace;
 }
+canvas#pixelCanvas {
+  width: 512px;
+}
 
 .contCpuRam{
   overflow-y: auto;

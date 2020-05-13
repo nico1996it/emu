@@ -1,18 +1,23 @@
 import React from "react";
 import cpu from "../cpu/cpu";
 import bus from "../cpu/cpuBus";
+
 import clock from "../clock";
 import romLoader from "../memoryMappers/romLoader";
 import displayPattern from "./displayPattern";
 //cpu.refreshMemoryView();
 window.clock = clock;
 window.can = displayPattern;
-
+function start() {
+  cpu.reset();
+  clock.step();
+}
 class DisplayCpu extends React.Component {
   render() {
     return (
       <div>
         <input type="file" onChange={romLoader} />
+        <button onClick={start}>Start</button>
         {/*     <p>
           {"A:"}
           {cpu.registersView[1].toString(16)}
@@ -25,7 +30,7 @@ class DisplayCpu extends React.Component {
           {" PC:"}
           {cpu.PcView[0].toString(16)}
         </p>*/}
-        <p>
+        {/* <p>
           {"N:"}
           {cpu.Negative}
           {" V:"}
@@ -45,7 +50,7 @@ class DisplayCpu extends React.Component {
         <p>
           {"Bus Address:"}
           {bus.address.toString(16)}
-        </p>
+        </p>*/}
       </div>
     );
   }

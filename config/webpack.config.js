@@ -1,5 +1,6 @@
 "use strict";
 const CircularDependencyPlugin = require("circular-dependency-plugin");
+const ClosureCompilerPlugin = require("webpack-closure-compiler");
 
 const fs = require("fs");
 const path = require("path");

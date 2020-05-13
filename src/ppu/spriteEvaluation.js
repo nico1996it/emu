@@ -63,15 +63,20 @@ function drawSprite(pixel, scanline) {
       sprite[1]
     );
 
-    var pixelColorIndex = row[pixel - sprite[3]];
+    var flipHorizontal = sprite[2] & 0b01000000;
+    var posInRow = pixel - sprite[3];
+    if (flipHorizontal) {
+      posInRow = Math.abs(posInRow - 7);
+    }
+    var pixelColorIndex = row[posInRow];
 
     var color;
-    if (pixelColorIndex === 0) color = ppu.memory[0x3f00];
-    else {
-      color = ppu.memory[paletteIndex + pixelColorIndex - 1];
-    }
 
-    colorMixer.spriteColor = color;
+    if (pixelColorIndex !== 0) {
+      color = ppu.memory[paletteIndex + pixelColorIndex - 1];
+      colorMixer.priority = sprite[2] & 0b00100000;
+      colorMixer.spriteColor = color;
+    }
   }
 }
 export default spriteEvaluation;

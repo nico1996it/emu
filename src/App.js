@@ -13,13 +13,15 @@ function App() {
   return (
     <div className="App">
       <Container fluid>
-        <Row>
-          <Col xs={6}>
-            <DisplayCpuRam />
-          </Col>
+        <Row className="justify-content-md-center">
           <Col xs={6}>
             <DisplayCpu />
             <canvas id={"pixelCanvas"} width={256} height={240} />
+            <p>
+              Controlli(Tastiera-<b>NES</b>):<br></br> Q-<b>A</b>, W-<b>B</b>,
+              E-
+              <b>SELECT</b>, R-<b>START</b>
+            </p>
             <Term />
           </Col>
         </Row>

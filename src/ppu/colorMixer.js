@@ -3,6 +3,7 @@ import displayPattern from "../gui/displayPattern";
 class colorMixer {
   bgColor;
   spriteColor = null;
+  priority = null;
   print(scanline, pixel) {
     var color;
     if (this.spriteColor != null) color = this.spriteColor;

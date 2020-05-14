@@ -55,13 +55,13 @@ function visibleScanlines(scanline, pixel) {
     //here will be crucial for scrolling
     var addressOfTile =
       ppu.baseNameTable + tileNumber + Math.floor(scanline / 8) * 32;
-    var byteOfTile = ppu.memory[addressOfTile]; //i should investigate about this +1
+    var byteOfTile = ppu.memory[addressOfTile];
     ppu.bgRegister = ppu.getRow(scanline % 8, ppu.bgPatternTable, byteOfTile);
 
     ppu.bgPaletteReg = findPalette(pixel, scanline);
   }
 
-  if (pixel <= 256 && pixel > 0) {
+  if (pixel < 256 && pixel >= 0) {
     var color;
 
     var pixelColorIndex = ppu.bgRegister[pixel % 8];

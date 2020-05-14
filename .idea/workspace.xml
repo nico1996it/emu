@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="01959156-c86c-4ab3-baca-a8e91cfe04c0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ppu/ppuBus.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cpu/cpuBus.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/cpu/cpuBus.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/displayPattern.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/displayPattern.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memoryMappers/mapper0.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/memoryMappers/mapper0.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ppu/ppu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ppu/ppu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ppu/spriteEvaluation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ppu/spriteEvaluation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ppu/ppuBus.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ppu/ppuBus.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ppu/visibleScanlines.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ppu/visibleScanlines.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +98,7 @@
       <workItem from="1588870344464" duration="76104000" />
       <workItem from="1589461054708" duration="157000" />
       <workItem from="1589461303282" duration="72000" />
-      <workItem from="1589461389264" duration="7780000" />
+      <workItem from="1589461389264" duration="13203000" />
     </task>
     <task id="LOCAL-00001" summary="a">
       <created>1588089937785</created>
@@ -155,7 +149,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589408970450</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="fixed scaling without anti aliasing">
+      <created>1589480518803</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1589480518803</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,7 +170,8 @@
     <MESSAGE value="clock e vari bugfix" />
     <MESSAGE value="build bugfix" />
     <MESSAGE value="clcok fixed, autplay fixed, mirroring almost fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="clcok fixed, autplay fixed, mirroring almost fixed" />
+    <MESSAGE value="fixed scaling without anti aliasing" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed scaling without anti aliasing" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="178" key="#ESLint" timestamp="1588280247063">
@@ -184,10 +186,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589136161682" />
-    <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1589408969927">
+    <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1589480518347">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="585" y="114" key="CommitChangelistDialog2/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589408969927" />
+    <state x="585" y="114" key="CommitChangelistDialog2/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589480518347" />
     <state x="704" y="103" key="Diagram.Print.Preview.Dialog" timestamp="1588632204966">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -232,10 +234,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="162" key="SettingsEditor/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588180548954" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1589408981317">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1589480529661">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589408981317" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1589480529661" />
     <state x="-1813" y="0" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1589226593741">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>

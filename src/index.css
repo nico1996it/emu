@@ -16,6 +16,7 @@ table.cpuRam th {
 }
 canvas#pixelCanvas {
   width: 512px;
+  image-rendering: pixelated
 }
 
 .contCpuRam{

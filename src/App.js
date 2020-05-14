@@ -20,7 +20,8 @@ function App() {
             <p>
               Controlli(Tastiera-<b>NES</b>):<br></br> Q-<b>A</b>, W-<b>B</b>,
               E-
-              <b>SELECT</b>, R-<b>START</b>
+              <b>SELECT</b>, R-<b>START</b>, Frecce Tastiera-
+              <b>Frecce del NES</b>
             </p>
             <Term />
           </Col>

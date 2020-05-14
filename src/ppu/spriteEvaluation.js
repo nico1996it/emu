@@ -21,13 +21,13 @@ function spriteEvaluation(scanline, pixel) {
       if (ppu.spriteRegister.length === 8) break; //sprite overflow
     }
   } else if (pixel <= 256) {
-    pixel++;
     drawSprite(pixel, scanline);
   }
 }
+
 function drawSprite(pixel, scanline) {
-  pixel -= 2;
   var spriteToDraw = null;
+  pixel--;
   for (var sprite of ppu.spriteRegister) {
     //for every sprite in register
     //check if have to print a sprite
@@ -57,11 +57,13 @@ function drawSprite(pixel, scanline) {
       default:
         break;
     }
-    var row = ppu.getRow(
-      scanline - sprite[0],
-      ppu.spritePatternTable,
-      sprite[1]
-    );
+
+    var flipVertical = sprite[2] & 0b10000000;
+    var posInColumn = scanline - sprite[0];
+    if (flipVertical) {
+      posInColumn = Math.abs(posInColumn - 7);
+    }
+    var row = ppu.getRow(posInColumn, ppu.spritePatternTable, sprite[1]);
 
     var flipHorizontal = sprite[2] & 0b01000000;
     var posInRow = pixel - sprite[3];
@@ -74,6 +76,7 @@ function drawSprite(pixel, scanline) {
 
     if (pixelColorIndex !== 0) {
       color = ppu.memory[paletteIndex + pixelColorIndex - 1];
+      //color = ppu.memory[40];
       colorMixer.priority = sprite[2] & 0b00100000;
       colorMixer.spriteColor = color;
     }

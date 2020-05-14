@@ -6,11 +6,14 @@ window.rom = rom;
 window.ppu = ppu;
 
 const ramBound = { bound: [0x00, 0x07ff], d: cpuRam.memory };
+const ramBound1 = { bound: [0x0800, 0x0fff], d: cpuRam.memory };
+const ramBound2 = { bound: [0x1000, 0x17ff], d: cpuRam.memory };
+const ramBound3 = { bound: [0x1800, 0x1fff], d: cpuRam.memory };
 
 const PPUCTRL = { bound: [0x2000, 0x2000], d: ppu.PPUCTRL };
 const PPUMASK = { bound: [0x2001, 0x2001], d: ppu.PPUMASK };
-const PPUSTATUS = { bound: [0x2002, 0x2002], d: ppu.PPUSTATUS };
 const OAMADDR = { bound: [0x2003, 0x2003], d: ppu.OAMADDR };
+const PPUSTATUS = { bound: [0x2002, 0x2002], d: ppu, p: "getPPUSTATUS" };
 const CTRL1 = { bound: [0x4016, 0x4016], d: controller, p: "CTRL1" };
 const OAMDATA = {
   bound: [0x2004, 0x2004],
@@ -18,7 +21,7 @@ const OAMDATA = {
   p: "OAMDATA",
   t: "REGISTER",
 };
-const PPUSCROLL = { bound: [0x2005, 0x2005], d: ppu.PPUSCROLL };
+const PPUSCROLL = { bound: [0x2005, 0x2005], d: ppu, p: "PPUSCROLL" };
 const PPUADDR = {
   bound: [0x2006, 0x2006],
   d: ppu,
@@ -37,6 +40,9 @@ window.a = memory;
 class CpuBus {
   addressSpaces = [
     ramBound,
+    ramBound1,
+    ramBound2,
+    ramBound3,
     PPUCTRL,
     PPUMASK,
     PPUSTATUS,

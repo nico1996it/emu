@@ -3,6 +3,7 @@ import drawingFunctions from "./drawingFunctions";
 import scanlineDispatcher from "./scanlineDispatcher";
 import cpuBus from "../cpu/cpuBus";
 import clock from "../clock";
+import ppuBus from "./ppuBus";
 class ppu {
   memory = new Uint8Array(0x4000);
   oamMemory = new Uint8Array(256);
@@ -13,11 +14,13 @@ class ppu {
   bgRegister;
   bgPaletteReg;
   spriteRegister = [];
+  horizontalScroll = 0;
+  verticalScroll = 0;
+  scrollReads = 0;
   PPUCTRL = new Uint8Array(1);
   PPUMASK = new Uint8Array(1);
   PPUSTATUS = new Uint8Array(1);
   OAMADDR = new Uint8Array(1);
-  PPUSCROLL = new Uint8Array(1);
 
   nWritePPUaddr = 0;
   constructor() {
@@ -35,15 +38,32 @@ class ppu {
   }
 
   set PPUDATA(value) {
-    this.memory[this.vRamAdDress] = value;
+    ppuBus.address = this.vRamAdDress;
+    ppuBus.value = value;
 
     this.vRamAdDress += this.VRAMIncrement; //1 or 32 it depends on ppuctrl
   }
   get PPUDATA() {
-    var result = this.memory[this.vRamAdDress];
-
+    ppuBus.address = this.vRamAdDress;
+    var result = ppuBus.value;
     this.vRamAdDress += this.VRAMIncrement; //1 or 32 it depends on ppuctrl
     return result;
+  }
+  get getPPUSTATUS() {
+    var result = this.PPUSTATUS[0];
+    this.vBankFlag = 0;
+    this.vRamAdDress = 0;
+    return result;
+  }
+
+  set PPUSCROLL(value) {
+    if (this.scrollReads === 0) {
+      this.horizontalScroll = value;
+      this.scrollReads++;
+    } else {
+      this.verticalScroll = value;
+      this.scrollReads = 0;
+    }
   }
 
   set OAMDATA(value) {
@@ -65,7 +85,7 @@ class ppu {
     return this.PPUCTRL & 0b100 ? 32 : 1;
   }
   get baseNameTable() {
-    var result = this.PPUCTRL & ~0b11111100;
+    var result = this.PPUCTRL & 0b00000011;
     switch (result) {
       case 0:
         return 0x2000;
@@ -107,7 +127,7 @@ class ppu {
 
   step() {
     this.pixelNr++;
-    if (this.pixelNr % 341 === 0) {
+    if (this.pixelNr === 341) {
       //first cycle of the next scan line
       this.pixelNr = 0; //reset pixel
       this.scanLineNr++; //increase scan line
